@@ -150,19 +150,6 @@
       color: black;
     }
 
-    #theme-toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #2b2d42;
-      color: white;
-      padding: 10px;
-      border: none;
-      cursor: pointer;
-      border-radius: 8px;
-      z-index: 10; /* Ensure it's above other content */
-    }
-
     /* === Resume Modal Styling === */
     #resumeModal {
       display: none;
@@ -286,7 +273,6 @@
   </style>
 </head>
 <body>
-  <button id="theme-toggle">Toggle Theme</button>
 
   <section class="hero">
     JEBA SELVAN ANDREW P
@@ -365,9 +351,6 @@
       document.getElementById('resumeModal').style.display = 'none';
     }
 
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-    });
   </script>
 </body>
 </html>
