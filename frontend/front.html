@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Assistant</title>
+    <style>
+        body {
+            background-color: #079549;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgb(72, 126, 52);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgb(0, 0, 0);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .assistant-face {
+            width: 200px;
+            height: 200px;
+            border: 4px solid #2d3748;
+            border-radius: 50%;
+            margin: 0 auto;
+            position: relative;
+            animation: rotate 10s linear infinite;
+        }
+
+        .assistant-face svg {
+            width: 180px;
+            height: 180px;
+            margin: 10px;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #0e0d0d;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3182ce;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #2b6cb0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Virtual Assistant</h1>
+        <div class="assistant-face">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="90" stroke="gray" stroke-width="1" fill="none" />
+                <line x1="60" y1="80" x2="80" y2="100" stroke="gray" />
+                <line x1="140" y1="80" x2="120" y2="100" stroke="gray" />
+                <path d="M70,130 Q100,150 130,130" stroke="gray" fill="none" />
+            </svg>
+        </div>
+        <p>How can I assist you today?</p>
+        <input type="text" placeholder="Type your message here..." disabled>
+        <button disabled>Send</button>
+    </div>
+</body>
+</html>
