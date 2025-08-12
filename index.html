@@ -33,6 +33,7 @@
       font-size: 3rem;
       font-weight: bold;
       position: relative;
+      padding: 0 20px; /* Added padding for smaller screens */
     }
 
     .scroll-down {
@@ -80,11 +81,11 @@
     .extra-section {
       background: white;
       padding: 50px;
-      text-align: center;
       display: flex;
-      flex-direction: row;
+      flex-direction: row; /* Default direction is row for desktop */
       gap: 40px;
       justify-content: center;
+      align-items: flex-start; /* Aligns items to the top */
     }
 
     .section-content {
@@ -102,7 +103,7 @@
     .extra-section ul {
       font-size: 1.2rem;
       line-height: 1.6;
-      list-style-type: none;
+      list-style-type: none; /* Already set */
     }
 
     .resume-btn {
@@ -139,6 +140,10 @@
       background: #1e1e1e;
       color: white;
     }
+    
+    body.dark h2 {
+        color: #ddd; /* Dark mode heading color */
+    }
 
     body.dark .resume-btn {
       background: #f77f00;
@@ -155,6 +160,7 @@
       border: none;
       cursor: pointer;
       border-radius: 8px;
+      z-index: 10; /* Ensure it's above other content */
     }
 
     /* === Resume Modal Styling === */
@@ -230,6 +236,53 @@
     .download-icon img:hover {
       transform: scale(1.1);
     }
+    
+    /* ======================================= */
+    /* === RESPONSIVE DESIGN FOR MOBILE ====== */
+    /* ======================================= */
+    @media (max-width: 992px) {
+      .extra-section {
+        flex-direction: column; /* Stack the columns vertically */
+        align-items: center; /* Center the stacked columns */
+        gap: 30px;
+      }
+      
+      .section-content {
+        width: 80%; /* Give the content some breathing room */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        font-size: 2.2rem; /* Reduce hero font size on phones */
+      }
+      
+      .content, .extra-section {
+        padding: 40px 20px; /* Reduce padding on smaller screens */
+      }
+      
+      .content h2, .extra-section h2 {
+        font-size: 1.8rem; /* Reduce heading font size */
+      }
+      
+      .content p, .extra-section ul {
+        font-size: 1rem; /* Reduce paragraph font size */
+      }
+
+      .section-content {
+        width: 100%; /* Use full width on small mobile screens */
+      }
+
+      footer p {
+        font-size: 1rem;
+      }
+
+      .resume-content {
+        width: 95%;
+        height: 80%;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -285,7 +338,6 @@
     </div>
   </section>
 
-  <!-- Resume Modal -->
   <div id="resumeModal">
     <div class="resume-content">
       <button class="close-btn" onclick="closeResume()">×</button>
